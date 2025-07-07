@@ -1,3 +1,5 @@
+const parentFolderImg = "./assets/img/";
+
 let books = [
     {
       "name": "Die Geheimnisse des Ozeans",
@@ -44,7 +46,7 @@ let books = [
     },
     {
       "name": "Die Farben des Himmels",
-      "imgName": "die_farben_des_himmels.jpg",
+      "imgName": "die_farben_des_himmels.png",
       "author": "Laura Blau",
       "likes": 1520,
       "liked": true,
@@ -107,7 +109,7 @@ let books = [
     },
     {
       "name": "Im Schatten des Mondes",
-      "imgName": "im_schatten_des_mondes.jpg",
+      "imgName": "im_schatten_des_mondes.png",
       "author": "Philipp Silber",
       "likes": 890,
       "liked": false,
@@ -127,7 +129,7 @@ let books = [
     },
     {
       "name": "Jenseits der Sterne",
-      "imgName":"jenseits_der_sterne",
+      "imgName":"jenseits_der_sterne.jpg",
       "author": "Oliver Schwarz",
       "likes": 1450,
       "liked": true,
@@ -143,7 +145,7 @@ let books = [
     },
     {
       "name": "Das verborgene Königreich",
-      "imgName": "das_verbogene_koenigreich.jpg",
+      "imgName": "das_verbogene_koenigreich.png",
       "author": "Elena Gold",
       "likes": 920,
       "liked": false,

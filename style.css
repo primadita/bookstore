@@ -1,3 +1,4 @@
+/* #region HEADER */
 header{
     background: #f9f1dc;
     /* box-shadow: rgba(243, 100, 78, 0.25) 0px 30px 60px -12px inset, rgba(243, 100, 78, 0.3) 0px 18px 36px -18px inset; */
@@ -10,18 +11,40 @@ header{
         img{
         height: 180px;
         }
+        @media (max-width: 715px) {
+            h1{
+                display: none;
+            }
+        }
+        @media (max-width: 420px) {
+            padding: 0 24px;
+        }
     }
 }
+/* #endregion */
+
+/* #region MAIN DISPLAY/BOOKCARDS */
 main{
     background: #2fb8a7;
     height: auto;
     min-height: 90dvh;
 }
-footer{
-    background-color: #f9f1dc;
+
+.d-flex {
+  display: flex;
+}
+.d-none{
+  display: none;
+}
+
+#display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
 }
 #bookcard{
-    width: 300px;
+    width: 280px;
     height: 600px;
     background: #163536;
     padding: 10px;
@@ -35,7 +58,7 @@ footer{
         background-color: #2fb8a7;
     }
     img{
-        width: 280px;
+        width: 260px;
         height: 200px;
         object-fit: cover;
     }
@@ -52,12 +75,18 @@ footer{
             }
         }
     }
+    table{
+        height: 90px;
+        tr{
+            vertical-align: top;
+        } 
+    }
     #comments-section{
         display: flex;
         flex-direction: column;
         gap: 0;
         height: auto;
-        min-height: 140px;
+        min-height: 120px;
         #comments{
             width: 100%;
                 max-height: 140px;
@@ -66,7 +95,7 @@ footer{
             table{
                 tr{
                     td:nth-child(3){
-                        width: 50%;
+                        width: 60%;
                         word-break: break-word;
                         overflow-wrap: break-word;
                     }
@@ -78,13 +107,27 @@ footer{
         bottom: 0px;
         input{
             width: 250px;
+            border-radius: 8px;
         }
         button{
+            background: transparent;
+            border: 0;
             img{
-                width: 20px;
-                height: 20px;
+                width: 26px;
+                height: 26px;
                 cursor: pointer;
             }
         }
     }
 }
+/* #endregion */
+
+/* #region FOOTER */
+footer{
+    background-color: #f9f1dc;
+    color:#f26350 ;
+    height: 7dvh;
+    display: flex;
+    align-items: center;
+}
+/* #endregion FOOTER */
