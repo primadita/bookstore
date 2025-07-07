@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  list-style: none;
+  position: relative;
+}
+@font-face {
+  font-family: Quicksand-Regular;
+  src: url(assets/fonts/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: Quicksand-Bold;
+  src: url(assets/fonts/Quicksand-Bold.ttf);
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Quicksand-Regular", "sans-serif";
+  color: #f9f1dc;
+  font-size: 1.6rem;
+}
+h1 {
+  font-family: "Quicksand-Bold";
+  font-size: clamp(2rem, 3dvw, 6rem);
+  font: weight 700;
+  color: #f26350;
+}
+h2 {
+  font-size: clamp(1.8rem, 2.5dvw, 2rem);
+  font-family: "Quicksand-Bold";
+  color: #f26350;
+}
+h3{
+  color: #ffbf41;
+}
+header,
+main,
+footer {
+  /* max-width: 1920px; */
+  display: flex;
+  justify-content: center;
+}
+.content {
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  padding: 60px;
+}
+.d-flex {
+  display: flex;
+}
+.d-none{
+  display: none;
+}

@@ -1,0 +1,90 @@
+header{
+    background: #f9f1dc;
+    /* box-shadow: rgba(243, 100, 78, 0.25) 0px 30px 60px -12px inset, rgba(243, 100, 78, 0.3) 0px 18px 36px -18px inset; */
+    height: 200px;
+    .content{
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 10px 24px;
+        img{
+        height: 180px;
+        }
+    }
+}
+main{
+    background: #2fb8a7;
+    height: auto;
+    min-height: 90dvh;
+}
+footer{
+    background-color: #f9f1dc;
+}
+#bookcard{
+    width: 300px;
+    height: 600px;
+    background: #163536;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    .separate-line{
+        height: 2px;
+        background-color: #2fb8a7;
+    }
+    img{
+        width: 280px;
+        height: 200px;
+        object-fit: cover;
+    }
+    div{
+        display: flex;
+        justify-content: space-between;
+        #like-section{
+            width: 20%;
+            img{
+                width: 20px;
+                height: 20px;
+                object-fit: contain;
+                cursor: pointer;
+            }
+        }
+    }
+    #comments-section{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+        min-height: 140px;
+        #comments{
+            width: 100%;
+                max-height: 140px;
+                padding: 4px;
+                overflow-y: auto;
+            table{
+                tr{
+                    td:nth-child(3){
+                        width: 50%;
+                        word-break: break-word;
+                        overflow-wrap: break-word;
+                    }
+                }
+            }            
+        }
+    }
+    #write-comment{
+        bottom: 0px;
+        input{
+            width: 250px;
+        }
+        button{
+            img{
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
