@@ -67,11 +67,17 @@ main{
         justify-content: space-between;
         #like-section{
             width: 20%;
-            img{
+            button{
                 width: 20px;
                 height: 20px;
-                object-fit: contain;
+                background: transparent;
+                border: 0;
                 cursor: pointer;
+                img{
+                    width: 20px;
+                    height: 20px;
+                    object-fit: contain;
+                }
             }
         }
     }
@@ -119,6 +125,13 @@ main{
             }
         }
     }
+}
+
+#like{
+    z-index: 20;
+}
+#liked{
+    z-index: 1;
 }
 /* #endregion */
 

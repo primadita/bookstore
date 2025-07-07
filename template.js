@@ -8,9 +8,8 @@ function getCardData(bookIdx) {
             <div>
               <h3 id="price">${Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(books[bookIdx].price)}</h3>
               <div id="like-section">
-                <p>${books[bookIdx].likes}</p>
-                <img id="like" src="./assets/icons/like-inactive.png" alt="">
-                <img id="liked" class="d-none" src="./assets/icons/like-color.png" alt="">
+                <p id="like-number-${bookIdx}">${books[bookIdx].likes}</p>
+                <button onclick="toggleLikeButton(${bookIdx})"><img id="heart${bookIdx}" src="" alt="like-button filled/unfilled"></button>
               </div>
             </div>
             <table>
