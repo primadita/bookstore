@@ -33,29 +33,24 @@ function getCardData(bookIdx) {
             <div id="comments-section">
               <h3>Kommentare:</h3>
               <div id="comments">
-                <table>
-                  <tr>
-                    <td>[Kevin]</td>
-                    <td>:</td>
-                    <td>xxxxx</td>
-                  </tr>
-                  <tr>
-                    <td>[Leser123]</td>
-                    <td>:</td>
-                    <td>xxxnfndksnfjef</td>
-                  </tr>
-                  <tr>
-                    <td>[Bookworm]</td>
-                    <td>:</td>
-                    <td>xxxfnfajnwdnjlfnkmsfmereefmefoffmklemalfmkmfoemfom</td>
-                  </tr>
+                <table id="comment-table-${bookIdx}">
                 </table>
               </div>
             </div>
             <div id="write-comment">
-              <input type="text" placeholder="Schreib dein Kommentar">
-              <button id="send-comment"><img src="./assets/icons/send-turquiose.png" alt=""></button>
+              <input id="newcomment${bookIdx}" type="text" placeholder="Schreib dein Kommentar">
+              <button id="send-comment" onclick="addNewComment(${bookIdx})"><img src="./assets/icons/send-turquiose.png" alt=""></button>
             </div>
           </div>
     `;
+}
+
+function loadComments(bookId, commentId){
+  return `
+      <tr>
+          <td>${books[bookId].comments[commentId].name}</td>
+          <td>:</td>
+          <td>${books[bookId].comments[commentId].comment}</td>
+      </tr>
+  `
 }

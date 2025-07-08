@@ -26,6 +26,7 @@ header{
 /* #region MAIN DISPLAY/BOOKCARDS */
 main{
     background: #2fb8a7;
+    background: radial-gradient(circle, rgba(47, 184, 167, 1) 34%, rgba(41, 120, 113, 1) 100%);
     height: auto;
     min-height: 90dvh;
 }
