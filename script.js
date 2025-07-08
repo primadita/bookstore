@@ -1,6 +1,8 @@
 let comments = [];
 let localUser = "anonym";
 
+function inputLocalUserName(){}
+
 function renderCards(){
     const displayCard = document.getElementById("display");
     displayCard.innerHTML = "";
