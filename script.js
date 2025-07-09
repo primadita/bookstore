@@ -107,3 +107,5 @@ function toggleLikeButton(idx){
     likeCounter.innerText = books[idx].likes;
 }
 // #endregion
+
+init();

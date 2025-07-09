@@ -20,12 +20,16 @@ footer {
   max-width: 1920px;
   display: flex;
   padding: 60px;
-  @media (max-width: 420px) {
+}
+@media (max-width: 420px) {
+  .content{
     padding: 48px 24px;
   }
-  @media (max-width: 342px) {
+}
+@media (max-width: 342px) {
+  .content{
     padding: 32px 8px;
-  }
+  }  
 }
 /* #endregion */
 

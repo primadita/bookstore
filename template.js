@@ -1,6 +1,6 @@
 function getCardData(bookIdx) {
   return `
-    <div id="bookcard">
+    <div id="bookcard${bookIdx}" class="bookcard">
             <h2>${books[bookIdx].name}</h2>
             <div class="separate-line"></div>
             <img id="book-img" src='${parentFolderImg+books[bookIdx].imgName}' alt="">
@@ -39,7 +39,7 @@ function getCardData(bookIdx) {
             </div>
             <div id="write-comment">
               <input id="newcomment${bookIdx}" type="text" placeholder="Schreib dein Kommentar">
-              <button id="send-comment" onclick="addNewComment(${bookIdx})"><img src="./assets/icons/send-turquiose.png" alt=""></button>
+              <button id="send-comment" onclick="addNewComment(${bookIdx})"><img src="./assets/icons/send-turquoise.png" alt=""></button>
             </div>
           </div>
     `;

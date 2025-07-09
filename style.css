@@ -42,7 +42,7 @@ main {
   justify-content: center;
   gap: 24px;
 }
-#bookcard {
+.bookcard {
   width: 280px;
   height: 600px;
   background: #163536;
