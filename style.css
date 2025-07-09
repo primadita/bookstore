@@ -1,146 +1,151 @@
 /* #region HEADER */
-header{
-    background: #f9f1dc;
-    height: 200px;
-    .content{
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
-        padding: 10px 24px;
-        img{
-        height: 180px;
-        }
-        @media (max-width: 715px) {
-            h1{
-                display: none;
-            }
-        }
-        @media (max-width: 420px) {
-            padding: 0 24px;
-        }
+header {
+  background: #f9f1dc;
+  height: 200px;
+  .content {
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 24px;
+    img {
+      height: 180px;
     }
+    @media (max-width: 715px) {
+      h1 {
+        display: none;
+      }
+    }
+    @media (max-width: 420px) {
+      padding: 0 24px;
+    }
+  }
 }
 /* #endregion */
 
 /* #region MAIN DISPLAY/BOOKCARDS */
-main{
-    background: #2fb8a7;
-    height: auto;
-    min-height: 90dvh;
+main {
+  background: #2fb8a7;
+  height: auto;
+  min-height: 90dvh;
 }
 
 .d-flex {
   display: flex;
 }
-.d-none{
+.d-none {
   display: none;
 }
 
-#display{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
+#display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
 }
-#bookcard{
-    width: 280px;
-    height: 600px;
-    background: #163536;
-    padding: 10px;
+#bookcard {
+  width: 280px;
+  height: 600px;
+  background: #163536;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  .separate-line {
+    height: 2px;
+    background-color: #2fb8a7;
+  }
+  img {
+    width: 260px;
+    height: 200px;
+    object-fit: cover;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    #like-section {
+      width: 20%;
+      button {
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  table {
+    height: 90px;
+    width: 100%;
+    tr {
+      vertical-align: top;
+      td:nth-child(3){
+        text-align: right;
+      }
+    }
+  }
+  #comments-section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    .separate-line{
-        height: 2px;
-        background-color: #2fb8a7;
-    }
-    img{
-        width: 260px;
-        height: 200px;
-        object-fit: cover;
-    }
-    div{
-        display: flex;
-        justify-content: space-between;
-        #like-section{
-            width: 20%;
-            button{
-                width: 20px;
-                height: 20px;
-                background: transparent;
-                border: 0;
-                cursor: pointer;
-                img{
-                    width: 20px;
-                    height: 20px;
-                    object-fit: contain;
-                }
-            }
+    gap: 0;
+    height: auto;
+    min-height: 120px;
+    #comments {
+      width: 100%;
+      max-height: 140px;
+      padding: 4px;
+      overflow-y: auto;
+      table {
+        tr {
+          td:nth-child(3) {
+            width: 60%;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            text-align: left;
+          }
         }
+      }
     }
-    table{
-        height: 90px;
-        width: 100%;
-        tr{
-            vertical-align: top;
-        } 
+  }
+  #write-comment {
+    bottom: 0px;
+    input {
+      width: 250px;
+      border-radius: 8px;
     }
-    #comments-section{
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        height: auto;
-        min-height: 120px;
-        #comments{
-            width: 100%;
-                max-height: 140px;
-                padding: 4px;
-                overflow-y: auto;
-            table{
-                tr{
-                    td:nth-child(3){
-                        width: 60%;
-                        word-break: break-word;
-                        overflow-wrap: break-word;
-                    }
-                }
-            }            
-        }
+    button {
+      background: transparent;
+      border: 0;
+      img {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+      }
     }
-    #write-comment{
-        bottom: 0px;
-        input{
-            width: 250px;
-            border-radius: 8px;
-        }
-        button{
-            background: transparent;
-            border: 0;
-            img{
-                width: 26px;
-                height: 26px;
-                cursor: pointer;
-            }
-        }
-    }
+  }
 }
 
-#like{
-    z-index: 20;
+#like {
+  z-index: 20;
 }
-#liked{
-    z-index: 1;
+#liked {
+  z-index: 1;
 }
 /* #endregion */
 
 /* #region FOOTER */
-footer{
-    background-color: #f9f1dc;
-    color:#f26350 ;
-    height: 7dvh;
-    display: flex;
-    align-items: center;
+footer {
+  background-color: #f9f1dc;
+  color: #f26350;
+  height: 7dvh;
+  display: flex;
+  align-items: center;
 }
 /* #endregion FOOTER */
