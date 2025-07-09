@@ -1,8 +1,45 @@
-let comments = [];
-let localUser = "anonym";
+let comments = {};
+let localUser = "";
 
-function inputLocalUserName(){}
+// #region INIT
+function init(){
+    getFromLocalStorage();
+    
+    if (localUser == "" || localUser == "anonym"){
+        inputLocalUserName();
+    }
 
+    renderCards();
+}
+
+function inputLocalUserName(){
+    let newUser = prompt("Please enter your name:");
+    if (newUser != null || newUser != "") {
+        localUser = newUser ;
+    }
+    localStorage.setItem("localUser", JSON.stringify(localUser));
+}
+
+function getFromLocalStorage(){
+    let userArr = JSON.parse(localStorage.getItem("localUser"));
+        if (userArr !== null){
+            localUser = userArr;
+        }
+
+    let commentsArr = JSON.parse(localStorage.getItem("comments"));
+        if (commentsArr !== null){
+            comments = commentsArr;
+        }
+
+    for (let bookId = 0; bookId < books.length; bookId++){
+        if (comments[bookId]){
+            books[bookId].comments = comments[bookId];
+        }
+    } 
+}
+// #endregion
+
+// #region RENDERING
 function renderCards(){
     const displayCard = document.getElementById("display");
     displayCard.innerHTML = "";
@@ -17,36 +54,39 @@ function renderCards(){
 function renderComment(bookId){
     const commentSect = document.getElementById("comment-table-" + bookId);
     commentSect.innerHTML = "";
-
+    
+    comments[bookId] =[];
     for (let commentId = 0; commentId < books[bookId].comments.length; commentId++){
         commentSect.innerHTML += loadComments(bookId, commentId);
-        comments[bookId]= {
+        comments[bookId].push({
             name: books[bookId].comments[commentId].name,
             comment: books[bookId].comments[commentId].comment
-        };
+        });
     }
-    localStorage.setItem("comments", JSON.stringify(comments));
 }
+// #endregion
 
+// #region COMMENTS
 function addNewComment(bookId){
     const newCommentRef = document.getElementById("newcomment" + bookId);
     const newComment = newCommentRef.value;
 
     if (newComment != ""){
-        if (!comments[bookId]){
-            comments[bookId] =[];
-        }
-        comments[bookId].push({
+        books[bookId].comments.push({
             name: localUser,
             comment: newComment
         });
 
         newCommentRef.value = "";
+        comments[bookId] = books[bookId].comments;
+        localStorage.setItem("comments", JSON.stringify(comments));
         renderComment(bookId);
 
     }
 }
+// #endregion
 
+// #region LIKE
 function getLikeButton(idx){
     const heartImg = document.getElementById("heart" + idx);
     if (books[idx].liked){
@@ -64,10 +104,11 @@ function toggleLikeButton(idx){
     if (books[idx].liked == true){
         heartImg.src = "./assets/icons/like-color.png";
         books[idx].likes = books[idx].likes + 1;
-        likeCounter.innerText = books[idx].likes;
     } else {
         heartImg.src = "./assets/icons/like-inactive.png";
         books[idx].likes = books[idx].likes - 1;
-        likeCounter.innerText = books[idx].likes;
     }
+    
+    likeCounter.innerText = books[idx].likes;
 }
+// #endregion

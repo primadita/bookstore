@@ -1,7 +1,6 @@
 /* #region HEADER */
 header{
     background: #f9f1dc;
-    /* box-shadow: rgba(243, 100, 78, 0.25) 0px 30px 60px -12px inset, rgba(243, 100, 78, 0.3) 0px 18px 36px -18px inset; */
     height: 200px;
     .content{
         justify-content: center;
@@ -26,7 +25,6 @@ header{
 /* #region MAIN DISPLAY/BOOKCARDS */
 main{
     background: #2fb8a7;
-    background: radial-gradient(circle, rgba(47, 184, 167, 1) 34%, rgba(41, 120, 113, 1) 100%);
     height: auto;
     min-height: 90dvh;
 }
