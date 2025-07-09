@@ -28,14 +28,12 @@ function getFromLocalStorage(){
 
     let commentsArr = JSON.parse(localStorage.getItem("comments"));
         if (commentsArr !== null){
-            comments = commentsArr;
-        }
-
-    for (let bookId = 0; bookId < books.length; bookId++){
-        if (comments[bookId]){
-            books[bookId].comments = comments[bookId];
-        }
-    } 
+            for (let bookId = 0; bookId < books.length; bookId++){
+                if (commentsArr[bookId]){
+                    books[bookId].comments = commentsArr[bookId];
+                }
+            }
+        } 
 }
 // #endregion
 
@@ -54,14 +52,9 @@ function renderCards(){
 function renderComment(bookId){
     const commentSect = document.getElementById("comment-table-" + bookId);
     commentSect.innerHTML = "";
-    
-    comments[bookId] =[];
+
     for (let commentId = 0; commentId < books[bookId].comments.length; commentId++){
         commentSect.innerHTML += loadComments(bookId, commentId);
-        comments[bookId].push({
-            name: books[bookId].comments[commentId].name,
-            comment: books[bookId].comments[commentId].comment
-        });
     }
 }
 // #endregion
@@ -78,8 +71,10 @@ function addNewComment(bookId){
         });
 
         newCommentRef.value = "";
-        comments[bookId] = books[bookId].comments;
-        localStorage.setItem("comments", JSON.stringify(comments));
+
+        const commentsToSave = books.map(book => book.comments);
+        localStorage.setItem("comments", JSON.stringify(commentsToSave));
+        
         renderComment(bookId);
 
     }

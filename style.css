@@ -82,6 +82,7 @@ main{
     }
     table{
         height: 90px;
+        width: 100%;
         tr{
             vertical-align: top;
         } 
