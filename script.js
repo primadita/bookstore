@@ -1,5 +1,7 @@
 let comments = {};
 let localUser = "";
+let likes = [];
+// let liked = {};
 
 // #region INIT
 function init(){
@@ -33,7 +35,16 @@ function getFromLocalStorage(){
                     books[bookId].comments = commentsArr[bookId];
                 }
             }
-        } 
+        }
+    let likesArr = JSON.parse(localStorage.getItem("likes"));
+        if (likesArr !== null){
+            for (let bookId = 0; bookId < books.length; bookId++){
+                if (likesArr[bookId]){
+                    books[bookId].likes = likesArr[bookId].number;
+                    books[bookId].liked = likesArr[bookId].liked;
+                }
+            }
+        }
 }
 // #endregion
 
@@ -46,6 +57,7 @@ function renderCards(){
         displayCard.innerHTML += getCardData(bookId);
         getLikeButton(bookId);
         renderComment(bookId);
+        saveFavorite(bookId);
     }
 }
 
@@ -76,7 +88,6 @@ function addNewComment(bookId){
         localStorage.setItem("comments", JSON.stringify(commentsToSave));
         
         renderComment(bookId);
-
     }
 }
 // #endregion
@@ -105,7 +116,19 @@ function toggleLikeButton(idx){
     }
     
     likeCounter.innerText = books[idx].likes;
+    saveFavorite(idx);
+}
+
+function saveFavorite(idx){
+    likes[idx] = {
+        number: books[idx].likes, 
+        liked: books[idx].liked}
+    
+    localStorage.setItem("likes", JSON.stringify(likes));
+    // localStorage.setItem("liked", JSON.stringify(liked));
 }
 // #endregion
+
+
 
 init();
